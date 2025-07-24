@@ -29,7 +29,7 @@ const config = defineConfig({
   build: {
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
-    basePath: "/maktubat"
+    basePath: "maktubat"
   },
   schema: {
     collections: [Page, Post, Author, Tag, Global],
