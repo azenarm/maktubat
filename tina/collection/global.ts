@@ -73,7 +73,7 @@ const Global: Collection = {
           list: true,
           ui: {
             itemProps: (item) => {
-              return { label: item?.icon?.name || 'undefined' };
+              return { label: item?.icon?.name || "undefined" };
             },
           },
           fields: [
@@ -117,6 +117,10 @@ const Global: Collection = {
             {
               label: "Lato",
               value: "lato",
+            },
+            {
+              label: "Vazirmatn",
+              value: "vazirmatn",
             },
           ],
         },
