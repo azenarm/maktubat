@@ -5,20 +5,12 @@
       "color": "orange",
       "style": "float"
     },
-    "name": "Tina Starter",
+    "name": "مکتوبات هیأت ‌الزهرا(س) دانشگاه شریف",
     "color": "default",
     "nav": [
       {
-        "href": "/",
-        "label": "Home"
-      },
-      {
-        "href": "/about",
-        "label": "About"
-      },
-      {
         "href": "/posts",
-        "label": "Blog"
+        "label": "نشریات"
       }
     ]
   },
