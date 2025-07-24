@@ -67,9 +67,6 @@ jobs:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
         run: pnpm build
 
-      - name: Build with Next.js
-        run: pnpm next build
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
