@@ -1,9 +1,11 @@
-import React from 'react';
-import client from '@/tina/__generated__/client';
-import Layout from '@/components/layout/layout';
-import PostClientPage from './client-page';
+import React from "react";
+import client from "@/tina/__generated__/client";
+import Layout from "@/components/layout/layout";
+import PostClientPage from "./client-page";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
+
+export const revalidate = 0;
 
 export default async function PostPage({
   params,
@@ -11,7 +13,7 @@ export default async function PostPage({
   params: Promise<{ urlSegments: string[] }>;
 }) {
   const resolvedParams = await params;
-  const filepath = resolvedParams.urlSegments.join('/');
+  const filepath = resolvedParams.urlSegments.join("/");
   const data = await client.queries.post({
     relativePath: `${filepath}.mdx`,
   });

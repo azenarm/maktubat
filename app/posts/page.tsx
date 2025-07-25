@@ -1,13 +1,15 @@
-import Layout from '@/components/layout/layout';
-import client from '@/tina/__generated__/client';
-import PostsClientPage from './client-page';
+import Layout from "@/components/layout/layout";
+import client from "@/tina/__generated__/client";
+import PostsClientPage from "./client-page";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
+
+export const revalidate = 0;
 
 export default async function PostsPage() {
   let posts = await client.queries.postConnection({
-    sort: 'date',
-    last: 1
+    sort: "date",
+    last: 1,
   });
   const allPosts = posts;
 
@@ -17,7 +19,7 @@ export default async function PostsPage() {
 
   while (posts.data?.postConnection.pageInfo.hasPreviousPage) {
     posts = await client.queries.postConnection({
-      sort: 'date',
+      sort: "date",
       before: posts.data.postConnection.pageInfo.endCursor,
     });
 
@@ -25,7 +27,9 @@ export default async function PostsPage() {
       break;
     }
 
-    allPosts.data.postConnection.edges.push(...posts.data.postConnection.edges.reverse());
+    allPosts.data.postConnection.edges.push(
+      ...posts.data.postConnection.edges.reverse()
+    );
   }
 
   return (
