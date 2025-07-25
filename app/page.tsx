@@ -4,8 +4,6 @@ import Layout from "@/components/layout/layout";
 import ClientPage from "./[...urlSegments]/client-page";
 import PostPage from "./posts/page";
 
-export const dynamic = "force-dynamic";
-
 export const revalidate = 0;
 
 export default async function Home() {
