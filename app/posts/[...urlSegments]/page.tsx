@@ -3,8 +3,6 @@ import client from "@/tina/__generated__/client";
 import Layout from "@/components/layout/layout";
 import PostClientPage from "./client-page";
 
-export const dynamic = "force-dynamic";
-
 export const revalidate = 0;
 
 export default async function PostPage({
